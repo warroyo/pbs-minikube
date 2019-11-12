@@ -50,6 +50,7 @@ this may take a few minutes and retries readiness probe delay is not configurabl
 1. install the helm chart. this can take a few retries and minutes to boot.
 
 ```bash
+cp values.tmplate.yml values.yml
 helm install eirini/uaa --namespace uaa --name uaa --values values.yml
 ```
 2. get the minikube ip and add it to `/etc/hosts`
