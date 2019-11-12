@@ -1,0 +1,100 @@
+env:
+  DOMAIN: &DOMAIN minikube.local
+  UAA_PUBLIC_PORT: 443
+
+secrets: &secrets
+  UAA_ADMIN_CLIENT_SECRET: testing
+ingress:
+  enabled: true
+  tls:
+    crt: |
+      fake -----BEGIN CERTIFICATE-----
+      MIIF9zCCA9+gAwIBAgIUKDlt1VTFA5bp8i86R5+TxjJzFqswDQYJKoZIhvcNAQEN
+      BQAwETEPMA0GA1UEAxMGU0NGIENBMB4XDTE5MTEwNzE3MjUwMFoXDTQ5MTAzMDE3
+      MjUwMFowDjEMMAoGA1UEAxMDdWFhMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIIC
+      CgKCAgEAyh1iwwm/5VjKZE/Z5/lAd3cQo21bIMfEwhapwz+M3Z/FrmsijOTK2w0u
+      +Vg08i3nW6fGy3wnai9mJXbF9bh1Un6jeBD6aVBasWVmS/ORCSrgOs1Hc/QebSZw
+      +aK/W4qnPtKQnKibBIf092rLr3uu08+jNw+ksN6fkgCxgZuZwIcoNn2gfSuPnrno
+      lrendhaorGDiPgLI2tw1EvFo80bTnL3w7bunyM4Irx3hgqv6r1LzTfgKwU3hKfZh
+      ZIy2Qzn1/durPaxejlMYlyzzC34WRa8WVY0JIAACnZ74iWhX3jnkwAALNUH4lG7U
+      Gmikkkr6COWfcOd1GRzMsBVmxDvPr4jH/xtGucH3nD8l6qkimFCkzOfC9qP5bXvy
+      Anv9isKzNivXJGzBgt6bChWG4i+IPHLwZ+AKUSoELFWOlDN8mGhdxobXjhiLTkd5
+      sLIU5iv6O6+/7LPgaivYci3ybtwRY9VH2UhSPCorzpRYXhWQCCod0sluBMC+RNdp
+      xoxNk1yepYlarQwnBUUC4JVjzpg5sYPXpdJBpI51s/6tkiBX123A5ddIZlH1Z1es
+      U8jlVKMv6pUxhcBlII001E3JoF5XxymWC4HxJuHWjiC8yNwzCjg6wCSDBXU6pf//
+      vdtM5LdhO0HpNy5bNqMkjHkU6jigXM2wqpgIOItuNoOHdyPjkmMCAwEAAaOCAUgw
+      ggFEMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA
+      MB0GA1UdDgQWBBRg3QvMBPM1lnzk1ENGZ3LVLyK+BTAfBgNVHSMEGDAWgBTgsbG2
+      wtv4oqiMaIDAoBUHMwOgvzCB1AYDVR0RBIHMMIHJggN1YWGCBSoudWFhggt1YWEu
+      dWFhLnN2Y4INKi51YWEudWFhLnN2Y4IZdWFhLnVhYS5zdmMuY2x1c3Rlci5sb2Nh
+      bIIbKi51YWEudWFhLnN2Yy5jbHVzdGVyLmxvY2FsggkqLnVhYS1zZXSCESoudWFh
+      LXNldC51YWEuc3Zjgh8qLnVhYS1zZXQudWFhLnN2Yy5jbHVzdGVyLmxvY2FsghJ1
+      YWEubWluaWt1YmUubG9jYWyCFCoudWFhLm1pbmlrdWJlLmxvY2FsMA0GCSqGSIb3
+      DQEBDQUAA4ICAQBD9E2wjQsj4f+RkSEAQ/0hYoKZ1ITNTbem/pp1qgvA+j5eDbKl
+      B0SKcvdnY/YxrIhojvUHyGBZZaSll1vVjlzWU6i6Tq9MdDIkJ7vvA0uaC4n+1WGR
+      UV2sMvGGgstRqAMv5LWYoKkMzyZjaIhHD+RSQAfnavJ3h1rcBaBGX8AXbS1tFNKO
+      T5xUAzglB1INVA2GhTJha00KO/ePNyfGcgZNVwWv6cCghfKNH5CDplBzS4yBeK7V
+      e7Zy81PWUADirZWw+kwOofhEDb4Kt86/hB//hTa7FDZA/LUDvVPe7AU/foDrVChG
+      wriLfjrVPmPK6i474P8ROTzzZIFaW4dqbYtV0RJlrDGlzpPGunoDhwQzvW3DZPN+
+      G9zF9uVkWQtchx9w61o/5XC8AYo7h9GTdZ3YyOhvZn7/iFoGt3aq+/xRV43Z793v
+      wbzRUwiAg3YgiaEFPUBkc3147K2xQTzHU232K/4m0dA+V2OqxRkfwEjyc1hObQSZ
+      ofQz6ooumf3YpsLSMdyoYt9WMeUvmOXkfqJAmsM26UiNvlLTREPCrQIJs4goBkhl
+      emuK6Ru9QPZIWcDHBVabC2os2jleI50k+UTOVHMcbInsmkDaRs8SPH5tpuVNFjxH
+      V165xu7qkE3QswgoQ1E1xRlrj3Msa3wo9b51y3nu+9u9/BZe2eKljp9QXA==
+      -----END CERTIFICATE-----
+    key: |
+      fake -----BEGIN RSA PRIVATE KEY-----
+      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
+      -----END RSA PRIVATE KEY-----
+kube:
+  storage_class:
+      persistent: "standard"
+      shared: "standard"
