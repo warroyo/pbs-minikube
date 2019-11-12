@@ -60,6 +60,10 @@ cp values.tmplate.yml values.yml
 helm repo add eirini https://cloudfoundry-incubator.github.io/eirini-release
 helm install eirini/uaa --namespace uaa --name uaa --values values.yml
 ```
+
+### NOTE the uaa helm chart takes a while. use `kubectl get pods -n uaa` and wait until the uaa pod is in `1/1 running` state
+
+
 2. get the minikube ip and add it to `/etc/hosts`
    
 ```bash
@@ -108,7 +112,7 @@ helm upgrade uaa eirini/uaa --values values.yml
 ```bash
 minikube ip
 minikube ssh \
-"echo \"<ip-here>       uaa.minikube.local\" \
+"echo \"$MK_IP       uaa.minikube.local\" \
 | sudo tee -a  /etc/hosts"
 ```
 
