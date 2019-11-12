@@ -41,7 +41,7 @@ minikube addons enable ingress
 
 ## Setup Helm
 
-1. create a service account for toller and a role binding. then init helm.
+1. create a service account for tiller and a role binding. then init helm.
    
 ```bash
 kubectl create serviceaccount -n kube-system tiller
