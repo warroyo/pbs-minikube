@@ -57,6 +57,7 @@ this may take a few minutes and retries readiness probe delay is not configurabl
 
 ```bash
 cp values.tmplate.yml values.yml
+helm repo add eirini https://cloudfoundry-incubator.github.io/eirini-release
 helm install eirini/uaa --namespace uaa --name uaa --values values.yml
 ```
 2. get the minikube ip and add it to `/etc/hosts`
