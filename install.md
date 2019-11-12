@@ -70,6 +70,7 @@ echo "$MK_IP  uaa.minikube.local" >> /etc/hosts
 3. create the pks_cluster client to mimic PKS. leave the secret empty
 
 ```bash
+uaac target uaa.minikube.local --skip-ssl-validation 
 uaac token client get admin -s testing
 uaac client add pks_cluster_client --scope="openid,roles" --authorized_grant_types="password,refresh_token" --authorities="uaa.resource" --access_token_validity 600 --refresh_token_validity 21600 --secret=""
 ```
