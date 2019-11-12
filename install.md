@@ -16,7 +16,7 @@ we will be creating a minikube cluster, be sure that it has enough mem,cpu, disk
 First we need to create a fake uaa cert so that minikube starts.
 ```bash
 mkdir -p ~/.minikube/files/var/lib/minikube/certs/
-echo "temp" > ~/.minikube/files/var/lib/minikube/certs/uaa-ca.crt
+cat ./ca.crt > ~/.minikube/files/var/lib/minikube/certs/uaa-ca.crt
 ```
 
 1. create the cluster with oidc options, we will create this UAA instance later. currently a bug with helm and 1.16 k8s we need to use 1.15
