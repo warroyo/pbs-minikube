@@ -113,5 +113,5 @@ minikube ssh \
 NOTE: minikube has certs in files duffle doesnt like it
 run this `./translate.sh >> ~/.kube/config`
 
-1. install PBS via docs. https://docs-pcf-staging.cfapps.io/platform/build-service/0-0-3/index.html
+1. install PBS via docs. https://docs-pcf-staging.cfapps.io/platform/build-service/0-0-4/index.html
 
