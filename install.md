@@ -13,6 +13,12 @@
 
 we will be creating a minikube cluster, be sure that it has enough mem,cpu, disk for what you are doing.
 
+First we need to create a fake uaa cert so that minikube starts.
+```bash
+mkdir -p ~/.minikube/files/var/lib/minikube/certs/
+echo "temp" > ~/.minikube/files/var/lib/minikube/certs/uaa-ca.crt
+```
+
 1. create the cluster with oidc options, we will create this UAA instance later. currently a bug with helm and 1.16 k8s we need to use 1.15
 ```bash
 minikube start --kubernetes-version="1.15.5" --memory=4096 --cpus=4 --disk-size=30GB --vm-driver=hyperkit --bootstrapper=kubeadm \
@@ -78,7 +84,6 @@ CA_CERT="$(kubectl get secret $SECRET --namespace uaa -o jsonpath="{.data['inter
 5. put that ca cert into minikube
    
 ```bash
-mkdir -p ~/.minikube/files/var/lib/minikube/certs/
 echo $CA_CERT > ~/.minikube/files/var/lib/minikube/certs/uaa-ca.crt
 ```
 
